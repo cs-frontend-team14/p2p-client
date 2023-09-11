@@ -5,7 +5,10 @@ import ChatBody from "@/widgets/ChatBody/ChatBody.vue";
 
 </script>
 <template>
-  <ChatHeader />
-  <ChatBody />
-  <ChatFooter />
+  <div class="chat-page h-screen flex flex-col">
+    <ChatHeader />
+    <ChatBody />
+    <ChatFooter />
+  </div>
+
 </template>

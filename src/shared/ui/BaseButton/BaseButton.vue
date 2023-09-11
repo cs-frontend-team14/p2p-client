@@ -58,7 +58,7 @@ defineEmits(['click'])
   >
     <component
       :class="[
-        variant === 'primary' ? ' text-white group-hover:text-primary-1' : '',
+        variant === 'primary' ? 'group-hover:text-primary-1' : '',
         variant === 'secondary' ? ' text-primary-1 group-hover:text-white' : '',
         size === 'small' ? ' w-4 h-4' : ''
       ]"
@@ -69,6 +69,5 @@ defineEmits(['click'])
       :class="[variant === 'primary' ? 'group-hover:text-slate-950' : '']"
     >{{ text }}</span
     >
-    <span v-if="discount">{{ discount }}</span>
   </button>
 </template>
