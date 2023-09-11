@@ -4,5 +4,9 @@
   "tabWidth": 2,
   "singleQuote": true,
   "printWidth": 100,
-  "trailingComma": "none"
+  "jsxSingleQuote": true,
+  "arrowParens": "always",
+  "max-len": ["error", 140, 2],
+  "useTabs": false,
+  "trailingComma" : "none"
 }
