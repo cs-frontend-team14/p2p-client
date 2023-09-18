@@ -29,12 +29,12 @@ function sendMessage() {
       data-placeholder="Aa"
       contenteditable="true"
       class="w-full lg:h-16 lg:pl-
-       md:text-base md:h-12 px-2 py-1.5 text-sm
-       focus:outline-none
+       md:text-base md:min-h-12 px-2 py-1.5 text-sm
+       focus:outline-none rounded-lg
        bg-zinc-200 mr-5"
       :class="[message.text.length > 0 ? 'before:content-attr(data-placeholder)' : '' ]"
       @keyup.shift.enter="sendMessage"
-      @keyup.exact="message.text = $event.target.textContent"
+      @keyup.exact="message.text = $event.target.innerHTML"
     >
     </div>
     <BaseButton

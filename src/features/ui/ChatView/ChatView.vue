@@ -4,7 +4,7 @@ import ChatMessage from "@/shared/ui/ChatMessage/ChatMessage.vue";
 import BaseContainer from "@/shared/ui/BaseContainer/BaseContainer.vue";
 import { useMessagesStore } from "@/entities/messges/model/messages.store";
 import MessageInput from "@/shared/ui/MessageInput/MessageInput.vue";
-import {IconSend} from "@/shared/ui";
+import { IconSend } from "@/shared/ui";
 import BaseButton from "@/shared/ui/BaseButton/BaseButton.vue";
 
 const messagesStore = useMessagesStore();
@@ -16,7 +16,7 @@ function addMessage(data: {text: string}) {
 
 <template>
   <base-container>
-    <div class="h-[calc(100vh-6.4rem)] flex flex-col justify-items-end">
+    <div class="h-[calc(100vh-6.4rem)] flex flex-col justify-items-end items-end">
       <chat-message
         v-for="message in messagesStore.getMessagesList"
         :key="message.messageId"
