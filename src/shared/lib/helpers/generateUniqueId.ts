@@ -1,5 +1,5 @@
 // @ts-ignore
-import {v4} from 'uuid'
+import { v4 } from 'uuid'
 
 export const generateUniqueID = (prefix: string): string => {
   const id = v4()

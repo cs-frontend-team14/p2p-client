@@ -7,17 +7,25 @@ const inputId = ref(generateUniqueID('input'))
 const message = ref({
   text: ''
 })
+const inputField = ref<HTMLElement | null>(null)
 withDefaults(defineProps<Partial<Props>>(), {
-  placeholder: 'Search Items',
+  placeholder: 'Start print text',
 })
+const emits = defineEmits(['send'])
 
-defineEmits(['update:model-value'])
+function sendMessage() {
+  emits('send', message.value);
+  if (inputField?.value) {
+    inputField.value.textContent = ''
+  }
+}
 </script>
 <template>
   <div class="message-input w-full flex items-center px-5 py-4">
     <div
       v-bind="$attrs"
       :id="inputId"
+      ref="inputField"
       data-placeholder="Aa"
       contenteditable="true"
       class="w-full lg:h-16 lg:pl-
@@ -25,13 +33,13 @@ defineEmits(['update:model-value'])
        focus:outline-none
        bg-zinc-200 mr-5"
       :class="[message.text.length > 0 ? 'before:content-attr(data-placeholder)' : '' ]"
-      @keyup.shift.enter="method"
+      @keyup.shift.enter="sendMessage"
+      @keyup.exact="message.text = $event.target.textContent"
     >
-      {{ message.text }}
     </div>
     <BaseButton
       v-if="icon"
-      :method="method"
+      :method="sendMessage"
       variant="primary"
       :icon="icon"
       class="top-1/2 rounded w-6 h-6 md:w-9 md:h-9 text-primary-1"
