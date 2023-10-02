@@ -3,8 +3,11 @@ import { BaseButton } from '@/shared/ui'
 import { ref } from 'vue'
 import { type Props } from './types'
 import { generateUniqueID } from '@/shared/lib/helpers/generateUniqueId'
+
 const inputId = ref(generateUniqueID('input'))
+
 const modelValue = defineModel()
+
 withDefaults(defineProps<Partial<Props>>(), {
   disabled: false,
   placeholder: 'Search Items',

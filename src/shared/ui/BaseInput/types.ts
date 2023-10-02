@@ -4,6 +4,6 @@ export interface Props {
   label: string
   type: string
   placeholder: string
-  method: (payload: MouseEvent) => void
+  method: (payload: MouseEvent | KeyboardEvent) => void
   icon: Component
 }
